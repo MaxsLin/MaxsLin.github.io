@@ -143,15 +143,21 @@
   
     
     <li>
-      <h2 class="post-list__post-title post-title"><a href="/2016/11/29/2016-11-29-pop-cocoa-1/" title="link to post.title">面向协议编程与 Cocoa 的邂逅 (上)</a></h2>
+      <h2 class="post-list__post-title post-title"><a href="/2015/10/02/Pointer/" title="link to post.title">指针</a></h2>
       <p class="excerpt">
     
-      本文是笔者在 MDCC 16 (移动开发者大会) 上 iOS 专场中的主题演讲的文字整理。您可以在这里找到演讲使用的 Keynote，部分示例代码可以在 MDCC 2016 的官方 repo 中找到。因为全部内容比较长，所以分成了上下两个部分，本文 (上) 主要介绍了一些理论方面的内容，包括面向对象编程存在的问题，面向协议的基本概念和决策模型等，下半部分主要展示了一些笔者日常使用面向协议思想和 C
+      指针作为一个使用Objective-C的iOS开发者，指针对很多人来说却是最熟悉的陌生人–虽然每天都在用，但是却对它了解的不是很多。那么指针到底是什么呢？
+
+指针即指针变量，是一个存储变量内存地址的变量。
+
+这句话可能有点绕，我们举个例子来说一下：
+12int a = 0;int *p = &amp;amp;a;
+上面的代码首先声明了一个int类型的变量a，它的值为0。然后又声明了一个指针类型的变量p，p
     &hellip;
       </p>
-      <div class="post-list__meta"><time datetime="2016-11-28T17:22:11.000Z" class="post-list__meta--date date">2016-11-29</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
-  <a class="tag-link" href="/tags/能工巧匠集/">能工巧匠集</a>
-</span><a class="btn-border-small" href="/2016/11/29/2016-11-29-pop-cocoa-1/">继续阅读</a></div>
+      <div class="post-list__meta"><time datetime="2015-10-02T03:09:16.000Z" class="post-list__meta--date date">2015-10-02</time> &#8226; <span class="post-list__meta--tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/iOS-Development/">iOS Development</a>
+</span><a class="btn-border-small" href="/2015/10/02/Pointer/">继续阅读</a></div>
       <hr class="post-list__divider" />
     </li>
   
@@ -197,27 +203,7 @@
     </div>
 
      
-<script>
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-	ga('create', 'UA-78918255-1', 'auto');
-	ga('send', 'pageview');
-</script>
-
     
-    <script>
-        var _hmt = _hmt || [];
-        (function() {
-            var hm = document.createElement("script");
-            hm.src = "//hm.baidu.com/hm.js?9cdad07c755fa23f6aced510c6760e87";
-            var s = document.getElementsByTagName("script")[0]; 
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
-
 
 
     <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>

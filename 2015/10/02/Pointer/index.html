@@ -1,28 +1,159 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title>MaxMak&#39;s House</title>
-  <subtitle>iOS Developer|LOL</subtitle>
-  <link href="/atom.xml" rel="self"/>
-  
-  <link href="http://maxmak.tk/"/>
-  <updated>2017-04-12T03:37:49.000Z</updated>
-  <id>http://maxmak.tk/</id>
-  
-  <author>
-    <name>Max Mak</name>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     
-  </author>
-  
-  <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>指针</title>
-    <link href="http://maxmak.tk/2015/10/02/Pointer/"/>
-    <id>http://maxmak.tk/2015/10/02/Pointer/</id>
-    <published>2015-10-02T03:09:16.000Z</published>
-    <updated>2017-04-12T03:37:49.000Z</updated>
+    <title>指针 | MaxMak&#39;s House</title>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="description" content="Record life,sharing technology!">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="指针 | MaxMak&#39;s House">
+    <meta name="twitter:description" content="Record life,sharing technology!">
+
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="指针 | MaxMak&#39;s House">
+    <meta property="og:description" content="Record life,sharing technology!">
+
     
-    <content type="html"><![CDATA[<h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><p>作为一个使用Objective-C的iOS开发者，指针对很多人来说却是最熟悉的陌生人–虽然每天都在用，但是却对它了解的不是很多。那么指针到底是什么呢？</p>
+    <meta name="author" content="Max Mak">
+    
+    <link rel="stylesheet" href="/css/vno.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+
+    
+    <link rel="icon" href="/images/favicon1.png">
+    
+
+    <meta name="generator" content="hexo"/>
+    
+    <link rel="alternate" type="application/rss+xml" title="MaxMak&#39;s House" href="/atom.xml">
+    
+
+    <link rel="canonical" href="http://maxmak.tk/2015/10/02/Pointer/"/>
+
+                 
+</head>
+
+<body class="home-template no-js">
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <span class="mobile btn-mobile-menu">
+        <i class="fa fa-list btn-mobile-menu__icon"></i>
+        <i class="fa fa-angle-up btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+<header class="panel-cover panel-cover--collapsed" style="background-image: url(/images/background-cover2.jpg)">
+  <div class="panel-main">
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        <a href="/" title="前往 MaxMak&#39;s House 的主页"><img src="/images/avatar.png" width="80" alt="MaxMak&#39;s House logo" class="panel-cover__logo logo" /></a>
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage for MaxMak&#39;s House">MaxMak&#39;s House</a></h1>
+        
+        <span class="panel-cover__subtitle panel-subtitle">iOS Developer|LOL</span>
+        
+        <hr class="panel-cover__divider" />
+        <p class="panel-cover__description">Record life,sharing technology!</p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+
+        <div class="navigation-wrapper">
+          <div>
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+              <li class="navigation__item"><a href="/#blog" title="访问博客" class="blog-button">博客</a></li>
+            
+            </ul>
+          </nav>
+          </div>
+          <div>
+          <nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+  <!-- Weibo-->
+  
+
+  <!-- Github -->
+  
+  <li class="navigation__item">
+    <a href="https://www.github.com/maxslin" title="查看我的GitHub主页" target="_blank">
+      <i class='social fa fa-github'></i>
+      <span class="label">Github</span>
+    </a>
+  </li>
+
+
+<!-- Stack Overflow -->
+        
+
+  <!-- Google Plus -->
+  
+
+<!-- Facebook -->
+
+
+<!-- Twitter -->
+
+<!-- instagram -->
+
+
+  <li class="navigation__item">
+    <a href="/atom.xml" title="RSS" target="_blank">
+      <i class='social fa fa-rss'></i>
+      <span class="label">RSS</span>
+    </a>
+  </li>
+
+
+  <li class="navigation__item">
+    <a href="mailto:maxmak1107@gmail.com" title="邮件联系我" target="_blank">
+      <i class='social fa fa-envelope'></i>
+      <span class="label">Email</span>
+    </a>
+  </li>
+
+
+  </ul>
+</nav>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay cover-purple"></div>
+  </div> 
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner">
+            <article class="post-container post-container--single">
+
+  <header class="post-header">
+    <div class="post-meta">
+      <time datetime="2015-10-02T03:09:16.000Z" class="post-list__meta--date date">2015-10-02</time> &#8226; <span class="post-meta__tags tags">于&nbsp;
+  <a class="tag-link" href="/tags/iOS-Development/">iOS Development</a>
+ </span>
+      <span class="page-pv">
+      &nbsp;阅读&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span>
+      </span> 
+   
+    </div>
+    <h1 class="post-title">指针</h1>
+  </header>
+
+  <section class="post">
+    <h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><p>作为一个使用Objective-C的iOS开发者，指针对很多人来说却是最熟悉的陌生人–虽然每天都在用，但是却对它了解的不是很多。那么指针到底是什么呢？</p>
 <blockquote>
 <p>指针即指针变量，是一个存储变量内存地址的变量。</p>
 </blockquote>
@@ -64,17 +195,41 @@
 <h2 id="Java中的引用"><a href="#Java中的引用" class="headerlink" title="Java中的引用"></a>Java中的引用</h2><p>看了上面的一堆东西可能你已经头晕目眩了，也可能你正高兴终于搞懂了。不管怎么样，接下里的路还的走！</p>
 <p>Java中的引用乍一听感觉跟C++中的引用比较像，其实它们只是名字像而已，真正跟它比较像的是指针。某种意义上来说Java中的引用其实就是C++中的指针，都是某种结构的变量，变量中保存了所指向的对象的内存地址，只不过受到了一些限制，不能像C++一样灵活的进行各种指针运算、指向任意的内存。</p>
 <p>参考文章：<a href="http://blog.csdn.net/linyt/article/details/1573864" target="_blank" rel="external">Java中的对象类型像引用还是指针，谁是谁非？</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;指针&quot;&gt;&lt;a href=&quot;#指针&quot; class=&quot;headerlink&quot; title=&quot;指针&quot;&gt;&lt;/a&gt;指针&lt;/h2&gt;&lt;p&gt;作为一个使用Objective-C的iOS开发者，指针对很多人来说却是最熟悉的陌生人–虽然每天都在用，但是却对它了解的不是很多。那么指针到底
-    
-    </summary>
-    
-    
-      <category term="iOS Development" scheme="http://maxmak.tk/tags/iOS-Development/"/>
-    
-  </entry>
+
+  </section>
+
+</article>
+
+<section class="read-more">
+     
+   
   
-</feed>
+</section>
+
+  
+
+            <footer class="footer">
+    <span class="footer__copyright">
+        本站点采用<a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+    </span>
+    <span class="footer__copyright">
+        基于 <a href="http://hexo.io">Hexo</a> 搭建，感谢 <a href="https://pages.github.com/">GitHub Pages</a> 提供免费的托管服务
+    </span>
+    <span class="footer__copyright">
+        &copy;2015~2017 - 本站由 <a href="/">@MaxMak</a> 创建,
+        使用<a href="https://github.com/lenbo-ma/hexo-theme-vno">hexo-theme-vno</a>主题
+    </span>
+</footer>
+
+        </div>
+    </div>
+
+     
+    
+
+
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    
+</body>
+</html>
