@@ -4,9 +4,9 @@
   <subtitle>iOS Developer|LOL</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://maxmak.tk/"/>
+  <link href="http://maxsmak.com/"/>
   <updated>2017-04-12T04:23:44.000Z</updated>
-  <id>http://maxmak.tk/</id>
+  <id>http://maxsmak.com/</id>
   
   <author>
     <name>Max Mak</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>浅谈字节序和字节对齐</title>
-    <link href="http://maxmak.tk/2015/12/15/Discussed/"/>
-    <id>http://maxmak.tk/2015/12/15/Discussed/</id>
+    <link href="http://maxsmak.com/2015/12/15/Discussed/"/>
+    <id>http://maxsmak.com/2015/12/15/Discussed/</id>
     <published>2015-12-15T07:30:36.000Z</published>
     <updated>2017-04-12T04:23:44.000Z</updated>
     
@@ -67,14 +67,14 @@
     </summary>
     
     
-      <category term="iOS Development" scheme="http://maxmak.tk/tags/iOS-Development/"/>
+      <category term="iOS Development" scheme="http://maxsmak.com/tags/iOS-Development/"/>
     
   </entry>
   
   <entry>
     <title>指针</title>
-    <link href="http://maxmak.tk/2015/10/02/Pointer/"/>
-    <id>http://maxmak.tk/2015/10/02/Pointer/</id>
+    <link href="http://maxsmak.com/2015/10/02/Pointer/"/>
+    <id>http://maxsmak.com/2015/10/02/Pointer/</id>
     <published>2015-10-02T03:09:16.000Z</published>
     <updated>2017-04-12T03:37:49.000Z</updated>
     
@@ -129,7 +129,7 @@
     </summary>
     
     
-      <category term="iOS Development" scheme="http://maxmak.tk/tags/iOS-Development/"/>
+      <category term="iOS Development" scheme="http://maxsmak.com/tags/iOS-Development/"/>
     
   </entry>
   
