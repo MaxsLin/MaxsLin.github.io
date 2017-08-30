@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://maxsmak.com/"/>
-  <updated>2017-04-12T04:23:44.000Z</updated>
+  <updated>2017-08-30T09:41:38.000Z</updated>
   <id>http://maxsmak.com/</id>
   
   <author>
@@ -14,6 +14,73 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>常见设计模式</title>
+    <link href="http://maxsmak.com/2017/08/29/DesignPatterns/"/>
+    <id>http://maxsmak.com/2017/08/29/DesignPatterns/</id>
+    <published>2017-08-29T06:10:39.000Z</published>
+    <updated>2017-08-30T09:41:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="常见设计模式"><a href="#常见设计模式" class="headerlink" title="常见设计模式"></a>常见设计模式</h1><blockquote>
+<p>开发中不管任何语言，面向对象语言在设计模式上是相通的，不过就是在设计模式的具体实现上语法之间有差异而已，接下来我会用swift进行讲解.</p>
+</blockquote>
+<h3 id="策略模式-Strategy"><a href="#策略模式-Strategy" class="headerlink" title="策略模式(Strategy)"></a>策略模式(Strategy)</h3><blockquote>
+<p>定义一系列的算法类，然后分别将它们每一个算法封装起来，让它们相互替换，在这模式下使算法独立于使用者而变化。也是一种对象行为模式。(也称<code>政策模式</code>)</p>
+</blockquote>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/// 策略模式(Strategy)</span></div><div class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">Strategy</span></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">currentObjectName</span><span class="params">()</span></span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">StrategyNormal</span>:<span class="title">Strategy</span></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">currentObjectName</span><span class="params">()</span></span> &#123;</div><div class="line">        <span class="built_in">print</span>(<span class="string">"<span class="subst">\(StrategyNormal.<span class="keyword">self</span>)</span>"</span>)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">StrategySelected</span>:<span class="title">Strategy</span></span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">currentObjectName</span><span class="params">()</span></span> &#123;</div><div class="line">        <span class="built_in">print</span>(<span class="string">"<span class="subst">\(StrategySelected.<span class="keyword">self</span>)</span>"</span>)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">StrategyHighlighted</span>:<span class="title">Strategy</span></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">currentObjectName</span><span class="params">()</span></span> &#123;</div><div class="line">        <span class="built_in">print</span>(<span class="string">"<span class="subst">\(StrategyHighlighted.<span class="keyword">self</span>)</span>"</span>)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">enum</span> <span class="title">StrategyStyle</span></span>&#123;</div><div class="line">    </div><div class="line">    <span class="keyword">case</span> normal,selected,highlighted</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Context</span></span>&#123;</div><div class="line">    <span class="keyword">var</span> obj:<span class="type">Strategy</span></div><div class="line">    <span class="keyword">init</span>(<span class="number">_</span> style:<span class="type">StrategyStyle</span>) &#123;</div><div class="line">        <span class="keyword">switch</span> style &#123;</div><div class="line">        <span class="keyword">case</span> .normal:</div><div class="line">            <span class="keyword">self</span>.obj = <span class="type">StrategyNormal</span>()</div><div class="line">        <span class="keyword">case</span> .selected:</div><div class="line">            <span class="keyword">self</span>.obj = <span class="type">StrategySelected</span>()</div><div class="line">        <span class="keyword">default</span>:</div><div class="line">            <span class="keyword">self</span>.obj = <span class="type">StrategyHighlighted</span>()</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">execute</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">self</span>.obj.currentObjectName()</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> normal = <span class="type">Context</span>(.normal)</div><div class="line">normal.execute() <span class="comment">//StrategyNormal</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> selected = <span class="type">Context</span>(.selected)</div><div class="line">selected.execute() <span class="comment">//StrategyNormal</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> highlighted = <span class="type">Context</span>(.highlighted)</div><div class="line">highlighted.execute() <span class="comment">//StrategyHighlighted</span></div></pre></td></tr></table></figure>
+<h5 id="策略模式优点"><a href="#策略模式优点" class="headerlink" title="策略模式优点"></a>策略模式优点</h5><ul>
+<li>完全符合”开闭原则<sup>[1]</sup>“.</li>
+<li>结构清晰，使用简单</li>
+<li>提供一种替换继承的办法，符合“单一职责原则<sup>[2]</sup>”</li>
+</ul>
+<h5 id="策略模式缺点"><a href="#策略模式缺点" class="headerlink" title="策略模式缺点"></a>策略模式缺点</h5><ul>
+<li>随着策略的增加，产生很多具体策略类.</li>
+<li>无法同时使用多个策略类.</li>
+</ul>
+<hr>
+<h3 id="简单工厂模式-Simple-Factory-Pattern"><a href="#简单工厂模式-Simple-Factory-Pattern" class="headerlink" title="简单工厂模式(Simple Factory Pattern)"></a>简单工厂模式(Simple Factory Pattern)</h3><blockquote>
+<p>又称为静态工厂方法(Static Factory Method)模式，它属于类创建型模式。在简单工厂模式中，可以根据参数的不同返回不同类的实例。简单工厂模式专门定义一个类来负责创建其他类的实例，被创建的实例通常都具有共同的父类。</p>
+</blockquote>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/// 简单工厂模式(Simple Factory Pattern)</span></div><div class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">Calculate</span></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">startCalculate</span><span class="params">(numA:Float,numB:Float)</span></span> -&gt; <span class="type">Float</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">AddCalculate</span>:<span class="title">Calculate</span></span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">startCalculate</span><span class="params">(numA:Float,numB:Float)</span></span> -&gt; <span class="type">Float</span>&#123;</div><div class="line">        <span class="keyword">return</span> numA + numB</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MinusCalculate</span>:<span class="title">Calculate</span></span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">startCalculate</span><span class="params">(numA:Float,numB:Float)</span></span> -&gt; <span class="type">Float</span>&#123;</div><div class="line">        <span class="keyword">return</span> numA - numB</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MultiplyCalculate</span>:<span class="title">Calculate</span></span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">startCalculate</span><span class="params">(numA:Float,numB:Float)</span></span> -&gt; <span class="type">Float</span>&#123;</div><div class="line">        <span class="keyword">return</span> numA * numB</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">DivideCalculate</span>:<span class="title">Calculate</span></span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">func</span> <span class="title">startCalculate</span><span class="params">(numA:Float,numB:Float)</span></span> -&gt; <span class="type">Float</span>&#123;</div><div class="line">        <span class="keyword">return</span> numA / numB</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">enum</span> <span class="title">CalculateStyle</span></span>&#123;</div><div class="line">    <span class="keyword">case</span> add,minus,divide,multiply</div><div class="line">&#125;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">CalcuteFactory</span></span>&#123;</div><div class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">createCalcute</span><span class="params">(<span class="number">_</span> style:CalculateStyle)</span></span> - <span class="type">Calculate</span>&#123;</div><div class="line">        <span class="keyword">switch</span> style &#123;</div><div class="line">        <span class="keyword">case</span> .add:</div><div class="line">            <span class="keyword">return</span> <span class="type">AddCalculate</span>()</div><div class="line">        <span class="keyword">case</span> .minus:</div><div class="line">            <span class="keyword">return</span> <span class="type">MinusCalculate</span>()</div><div class="line">        <span class="keyword">case</span> .multiply:</div><div class="line">            <span class="keyword">return</span> <span class="type">MultiplyCalculate</span>()</div><div class="line">        <span class="keyword">default</span>:</div><div class="line">            <span class="keyword">return</span> <span class="type">DivideCalculate</span>()</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> add  = <span class="type">CalcuteFactory</span>.createCalcute(.add) </div><div class="line">add.startCalculate(numA: <span class="number">10</span>, numB: <span class="number">10</span>) <span class="comment">// 20</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> minus = <span class="type">CalcuteFactory</span>.createCalcute(.minus) </div><div class="line">minus.startCalculate(numA: <span class="number">20</span>, numB: <span class="number">10</span>) <span class="comment">// 10</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> multiply = <span class="type">CalcuteFactory</span>.createCalcute(.multiply) </div><div class="line">multiply.startCalculate(numA: <span class="number">10</span>, numB: <span class="number">10</span>) <span class="comment">// 100</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> divide = <span class="type">CalcuteFactory</span>.createCalcute(.divide)</div><div class="line">divide.startCalculate(numA: <span class="number">10</span>, numB: <span class="number">10</span>) <span class="comment">// 1</span></div></pre></td></tr></table></figure>
+<h5 id="简单工厂模式优点"><a href="#简单工厂模式优点" class="headerlink" title="简单工厂模式优点"></a>简单工厂模式优点</h5><ul>
+<li>工厂类可以决定在什么时候创建哪一个产品类的实例，使用者可以免除直接创建产品对象的责任，而仅仅“消费”产品；简单工厂模式通过这种做法实现了对责任的分割，它提供了专门的工厂类用于创建对象。</li>
+<li>使用者无须知道所创建的具体产品类的类名，只需要知道具体产品类所对应的参数即可，对于一些复杂的类名，通过简单工厂模式可以减少使用者的记忆量。</li>
+<li>通过引入配置文件，可以在不修改任何使用者代码的情况下更换和增加新的具体产品类，在一定程度上提高了系统的灵活性。</li>
+</ul>
+<h5 id="简单工厂模式缺点"><a href="#简单工厂模式缺点" class="headerlink" title="简单工厂模式缺点"></a>简单工厂模式缺点</h5><ul>
+<li>由于工厂类集中了所有产品创建逻辑，一旦不能正常工作，整个系统都要受到影响。</li>
+<li>使用简单工厂模式将会增加系统中类的个数，在一定程序上增加了系统的复杂度和理解难度。</li>
+<li>系统扩展困难，一旦添加新产品就不得不修改工厂逻辑，在产品类型较多时，有可能造成工厂逻辑过于复杂，不利于系统的扩展和维护。<br>简单工厂模式由于使用了静态工厂方法，造成工厂角色无法形成基于继承的等级结构。</li>
+</ul>
+<hr>
+<h3 id="看到这里可能有人会问策略模式和简单工厂模式有什么区别？"><a href="#看到这里可能有人会问策略模式和简单工厂模式有什么区别？" class="headerlink" title="看到这里可能有人会问策略模式和简单工厂模式有什么区别？"></a>看到这里可能有人会问策略模式和简单工厂模式有什么区别？</h3><blockquote>
+<p>策略模式和简单工厂模式看起来非常相似,从使用这两种模式的角度来看，我们会发现在<code>简单工厂模式</code> 中我们只需要传递相应的条件就能得到想要的对象，然后使用者通过这个对象实现算法操作。而在<code>策略模式</code>下，使用时必须首先创建一个想使用的类对象，然后将该对象最为参数传递进去，通过该对象调用不同的算法。在简单工厂模式中实现了通过条件选取一个类去实例化对象，策略模式则将选取相应对象的工作交给模式的使用者，它本身不去做选取工作。</p>
+</blockquote>
+<hr>
+<h3 id="工厂方法模式"><a href="#工厂方法模式" class="headerlink" title="工厂方法模式"></a>工厂方法模式</h3><blockquote>
+<p>后补</p>
+</blockquote>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">后补</div></pre></td></tr></table></figure>
+<h3 id="抽象工厂模式"><a href="#抽象工厂模式" class="headerlink" title="抽象工厂模式"></a>抽象工厂模式</h3><blockquote>
+<p>后补</p>
+</blockquote>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">后补</div></pre></td></tr></table></figure>
+<p> <sub>[1]<sub> <strong>开放-封闭原则(OCP):</strong> 类对扩展开放，而对修改封闭。</sub></sub></p>
+<p> <sub>[2]<sub> <strong>单一职责原则(SRP):</strong> 规定每个类都应该只有一个单一的功能，并且该功能应该由这个类完全封装起来.</sub></sub></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;常见设计模式&quot;&gt;&lt;a href=&quot;#常见设计模式&quot; class=&quot;headerlink&quot; title=&quot;常见设计模式&quot;&gt;&lt;/a&gt;常见设计模式&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;开发中不管任何语言，面向对象语言在设计模式上是相通的，不过就是在设计模式的具体实现
+    
+    </summary>
+    
+    
+      <category term="设计模式" scheme="http://maxsmak.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>浅谈字节序和字节对齐</title>
@@ -76,9 +143,9 @@
     <link href="http://maxsmak.com/2015/10/02/Pointer/"/>
     <id>http://maxsmak.com/2015/10/02/Pointer/</id>
     <published>2015-10-02T03:09:16.000Z</published>
-    <updated>2017-04-12T03:37:49.000Z</updated>
+    <updated>2017-05-22T17:31:59.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h2><p>作为一个使用Objective-C的iOS开发者，指针对很多人来说却是最熟悉的陌生人–虽然每天都在用，但是却对它了解的不是很多。那么指针到底是什么呢？</p>
+    <content type="html"><![CDATA[<p>作为一个使用Objective-C的iOS开发者，指针对很多人来说却是最熟悉的陌生人–虽然每天都在用，但是却对它了解的不是很多。那么指针到底是什么呢？</p>
 <blockquote>
 <p>指针即指针变量，是一个存储变量内存地址的变量。</p>
 </blockquote>
@@ -124,7 +191,10 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;指针&quot;&gt;&lt;a href=&quot;#指针&quot; class=&quot;headerlink&quot; title=&quot;指针&quot;&gt;&lt;/a&gt;指针&lt;/h2&gt;&lt;p&gt;作为一个使用Objective-C的iOS开发者，指针对很多人来说却是最熟悉的陌生人–虽然每天都在用，但是却对它了解的不是很多。那么指针到底
+      &lt;p&gt;作为一个使用Objective-C的iOS开发者，指针对很多人来说却是最熟悉的陌生人–虽然每天都在用，但是却对它了解的不是很多。那么指针到底是什么呢？&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;指针即指针变量，是一个存储变量内存地址的变量。&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
